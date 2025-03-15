@@ -4,23 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Compile the C++ file
-                sh 'g++ main.cpp -o output'
-                // Build identifier
-                build 'PES1UG22AM908-1'
+                // Intentional error: Incorrect compiler command (g++x does not exist)
+                sh 'g++x main.cpp -o output'
+                build 'YOUR_SRN-1'
             }
         }
 
         stage('Test') {
             steps {
-                // Run the compiled program
                 sh './output'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Simulated deployment
                 echo 'Deployment Successful'
             }
         }
@@ -28,7 +25,6 @@ pipeline {
 
     post {
         failure {
-            // Display message if the pipeline fails
             echo 'Pipeline failed'
         }
     }
