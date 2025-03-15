@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Intentional error: Incorrect compiler command (g++x does not exist)
                 sh 'g++x main.cpp -o output'
-                build 'YOUR_SRN-1'
+                build 'PES1UG22AM908-1'
             }
         }
 
